@@ -5,7 +5,7 @@ from functools import partial
 from tkinter import messagebox
 from copy import deepcopy
 
-sing = 0
+sign = 0
 button = []
 global board
 board = [[" " for x in range(3)] for y in range(3)]
@@ -15,7 +15,7 @@ def winner(b, l):
         #ROWS
         (b[0][0] == l and b[0][1] == l and b[0][2] == l) or
         (b[1][0] == l and b[1][1] == l and b[1][2] == l) or
-        (b[2][0] == l and b[2][1] == 1 and b[2][2] == l) or 
+        (b[2][0] == l and b[2][1] == l and b[2][2] == l) or 
 
         #Columns
         (b[0][0] == l and b[1][0] == l and b[2][0] == l) or
@@ -56,7 +56,7 @@ def get_text(i, j, gb, l1, l2):
         box = messagebox.showinfo("Tie Game", "Tie Game") 
 
 def isfree():
-    return board[i][j == " "]
+    return board[i][j]== " "
 
 def isfull():
     flag = True
@@ -173,7 +173,7 @@ def gameboard_pc(game_board,l1,l2):
         button[i] = []
         for j in range(3):
             n = j
-            button[j].append(j)
+            button[i].append(j)
             get_t = partial(get_text_pc, i, j, game_board, l1, l2)
             button[i][j] = Button(
                 game_board, bd = 5, command = get_t, height = 4, width = 8
@@ -226,13 +226,13 @@ def play():
     )
 
     B1 = Button(
-        menu, text="Single PLayer", command=wpc,
+        menu, text="Single Player", command=wpc,
         activeforeground="red", activebackground="yellow",
         bg="red", fg="yellow", width=500, font="summer", bd=5
     )
 
     B2 = Button(
-        menu, text="Multi PLayer", command=wpl,
+        menu, text="Multi Player", command=wpl,
         activeforeground="red", activebackground="yellow",
         bg="red", fg="yellow", width=500, font="summer", bd=5
     )
