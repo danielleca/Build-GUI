@@ -17,8 +17,8 @@ entry.place(x = 50, y=52)
 entry.insert(0, "")
 
 def play():
-    language = "en"
-    myObj = gTTS(text = entry.get(), lang = language, slow = False, tld = "co.uk")
+    language = "es"
+    myObj = gTTS(text = entry.get(), lang = language, slow = False, tld = "co.za")
     myObj.save("convert.wav")
     os.system("convert.wav")
 
